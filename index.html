@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title >Phone Gap Device ready Event </title>
+<meta name="viewport" content="width=device-width, initial-scale=1" > 
+
+ <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+ <script type="text/javascript" charset="utf-8">
+// Call onDeviceReady for phoneGap has fully loaded or not 
+
+alert('Cordova to load');
+
+document.addEventListener("deviceready", onDeviceReady,false);
+
+function onDeviceReady()
+{
+	alert('Device ready Event');
+	var mydiv=document.getElementById("props");
+	mydiv.innerHTML='Device Name <br />' + window.device.name + '<br />';
+	document.addEventListener("backbutton", onBackButton, false);	
+}
+
+function onBackButton()
+{
+	alert("Back Event");
+}
+
+</script>
+</head>
+
+<body>
+Phone Gap Device ready Event
+<p id="props"> Device Properties </p>
+</body>
+</html>
